@@ -30,6 +30,7 @@ class AdaptivePrisonerBot:
 
         self.bot_history = self.bot_history[1:] + [bot_move]
         self.opp_history = self.opp_history[1:] + [opp_move]
+        
 
         input_layers = np.array(self.bot_history + self.opp_history + [1]).reshape(1, -1)
         output = self.sigmoid(np.dot(input_layers, self.synaptic_weights))
@@ -41,7 +42,3 @@ class AdaptivePrisonerBot:
     def debug(self):
         return f"AdaptivePrisonerBot(weights={self.synaptic_weights.flatten()})"
 
-bot = AdaptivePrisonerBot()
-#answer = bot.__init__().act().learn(0, 0, 2)
-answer = bot.learn(0,0,3)
-print(answer)

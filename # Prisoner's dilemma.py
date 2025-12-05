@@ -11,8 +11,6 @@ payoff_matrix = {
     (Defect, Defect): (0, 0)
 }
 
-
-
 for i in range(5):
 
     player_move = input("Choose your move (C = Cooperate, D = Defect): ").strip().upper()
@@ -27,7 +25,6 @@ for i in range(5):
           f"Your payoff = {player_payoff}, Opponent payoff = {opponent_payoff}")
     
 
-
 """
 S
 print("\nFinal Round Summary:")
@@ -35,3 +32,7 @@ print(f"You chose: {player_move}")
 print(f"Opponent chose: {opponent_move}")
 print(f"Your payoff: {player_payoff}, Opponent's payoff: {opponent_payoff}")
 """
+
+
+
+
