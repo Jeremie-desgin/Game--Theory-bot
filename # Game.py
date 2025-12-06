@@ -24,6 +24,9 @@ def get_player_move():
             if pm not in ("C","D"):
                 print("Only C or D are allowed!")
                 continue
+            elif pm == "Q":
+                return None
+                
             return pm
             ##break
             
@@ -47,7 +50,7 @@ while True:
 
     # Player move
     player_move = get_player_move()
-    if player_move == "Q":
+    if player_move == None:
         print("Goodbye!")
         break 
     player_num = convert_to_bot_format(player_move)
