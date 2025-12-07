@@ -3,7 +3,7 @@ import numpy as np
 
 
 class AdaptivePrisonerBot:
-    def __init__(self, memory_size=3, lr=0.5):
+    def __init__(self, memory_size=9, lr=0.3):
 
         self.memory_size = memory_size
         self.lr = lr

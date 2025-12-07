@@ -20,12 +20,12 @@ payoff_matrix = {
 def get_player_move():
     while True:
         try:
-            pm = input(str("Choose your move (C = Cooperate, D = Defect): ")).strip().upper()
+            pm = input(str("Choose your move (C = Cooperate, D = Defect), Q = Quit: ")).strip().upper()
+            if pm == "Q":
+                return None
             if pm not in ("C","D"):
                 print("Only C or D are allowed!")
                 continue
-            elif pm == "Q":
-                return None
                 
             return pm
             ##break
@@ -43,6 +43,9 @@ def convert_to_letter(move):
 
 bot = AdaptivePrisonerBot() 
 print("=== Prisoner's Dilemma vs Learning Bot ===")
+
+bot_score = 0
+player_score = 0
 
 round_number = 1
 while True:
@@ -62,15 +65,26 @@ while True:
 
     bot.learn(bot_num,player_num , bot_payoff)
 
+    
+
+    bot_score += bot_payoff
+    player_score += player_payoff
+
     print(f"You played: {player_move}")
     print(f"Bot played: {bot_move}")
     print(f"Your reward: {player_payoff}")
     print(f"Bot reward: {bot_payoff}")
 
+    print("===Score===")
+    print(f"Bot score: {bot_score}")
+    print(f"players score: {player_score}")
 
+    round_number += 1  
+
+"""
     print("=== DEBUGGING ===")
     print("Bot history:", bot.bot_history)
     print("Opponent history:", bot.opp_history)
+"""
 
-
-    round_number += 1
+    
