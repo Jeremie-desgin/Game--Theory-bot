@@ -8,11 +8,10 @@ def random_opponent(history):
 
 def tit_for_tat(opp_history):
     if not opp_history:
-        return 0
-    else:
-        return opp_history[-1]
+        return None
+   
     
-rounds = 2000
+rounds = 10
 
 opponents = {
     "Random": random_opponent,"Tit-for-Tat" : tit_for_tat
@@ -26,7 +25,7 @@ payoff_matrix = {
 }
 
 
-for name, opponents in opponents.items():
+for name, opponents_fn in opponents.items():
     print(f"testing bot vs {name}")
     bot = AdaptivePrisonerBot()
     bot_score = 0
@@ -34,7 +33,7 @@ for name, opponents in opponents.items():
     
 
     for round_number in range (1, rounds+1):
-        opp_move = opponents(bot.bot_history)
+        opp_move = opponents_fn(bot.bot_history)
         bot_move = bot.act()
 
         bot_payoff, opp_payoff = payoff_matrix[(bot_move, opp_move)]
