@@ -1,4 +1,4 @@
-## neual network calss g
+## neual network calss ghs
  
 import numpy as np 
 
