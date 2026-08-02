@@ -1,4 +1,6 @@
 # Python learning bot for prisoner's dilemma 
+# I WILL CLEAN THIS ALL UP 
+
 
 import numpy as np
 
