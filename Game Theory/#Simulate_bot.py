@@ -2,39 +2,6 @@
 
 
 
-    "Standard PD":   {(0,0):(3,3),(0,1):(0,5),(1,0):(5,0),(1,1):(1,1)},
-    "Weak PD":       {(0,0):(3,3),(0,1):(1,5),(1,0):(5,1),(1,1):(2,2)},
-    "Strong PD":     {(0,0):(2,2),(0,1):(0,8),(1,0):(8,0),(1,1):(1,1)},
-    "Near-Harmony":  {(0,0):(4,4),(0,1):(0,3),(1,0):(3,0),(1,1):(1,1)},
-}
-
-MAX_REWARD = {
-    "Standard PD":   5,
-    "Weak PD":       5,
-    "Strong PD":     8,
-    "Near-Harmony":  4,
-}
-
-
-def always_cooperate(rnd, bot_h, opp_h):
-    return 0
-
-def always_defect(rnd, bot_h, opp_h):
-    return 1
-
-def random_opponent(rnd, bot_h, opp_h):
-    return np.random.choice([0, 1])
-
-def tit_for_tat(rnd, bot_h, opp_h):
-    return 0 if not bot_h else bot_h[-1]
-
-def grudger(rnd, bot_h, opp_h):
-    return 1 if 1 in bot_h else 0
-
-def switching_opponent(rnd, bot_h, opp_h, switch_at=20000, rounds=40000):
-    
-    return 0 if rnd <= switch_at else 1
-
 def drifting_opponent(rnd, bot_h, opp_h, rounds=40000):
    
     defect_prob = rnd / rounds
