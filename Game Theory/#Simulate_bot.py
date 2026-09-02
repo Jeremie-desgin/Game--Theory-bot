@@ -1,20 +1,7 @@
 # Simulate_Bot.py
 
 
-import os
-import numpy as np
-import matplotlib
-matplotlib.use("Agg")          
-import matplotlib.pyplot as plt
-import matplotlib.gridspec as gridspec
 
-from LrBot import AdaptivePrisonerBot
-
-
-os.makedirs("results", exist_ok=True)
-
-
-PAYOFF_MATRICES = {
     "Standard PD":   {(0,0):(3,3),(0,1):(0,5),(1,0):(5,0),(1,1):(1,1)},
     "Weak PD":       {(0,0):(3,3),(0,1):(1,5),(1,0):(5,1),(1,1):(2,2)},
     "Strong PD":     {(0,0):(2,2),(0,1):(0,8),(1,0):(8,0),(1,1):(1,1)},
