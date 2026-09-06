@@ -1,4 +1,3 @@
-# Python ML Bot 
 import numpy as np 
 
 class MLprisonerBot:
